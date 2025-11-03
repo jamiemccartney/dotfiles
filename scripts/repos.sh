@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPOS=(
-  "tmux:plugins https://github.com/tmux-plugins/tpm tpm"
-  "zsh:themes https://github.com/spaceship-prompt/spaceship-prompt.git spaceship-prompt | ln -sf \"$ZSH_HOME/config/themes/spaceship-prompt/spaceship.zsh\" \"$ZSH_HOME/config/themes/spaceship.zsh-theme\""
-  "zsh:plugins https://github.com/zsh-users/zsh-autosuggestions zsh-autosuggestions"
-)
+# Restore arrays from environment
+eval "$REPOS_DEF"
 
 get_install_path() {
   local type="$1"

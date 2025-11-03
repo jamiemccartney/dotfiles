@@ -12,11 +12,12 @@ if [[ $# -eq 0 ]]; then
   echo "Commands:"
   echo "  init     Create symlinks and clone repos"
   echo "  update   Update all repos to latest"
+  echo "  doctor   Verify installation and configuration"
   exit 1
 fi
 
 SCRIPTS_DIR="./scripts"
-source "$SCRIPTS_DIR/consts.sh"
+source "$SCRIPTS_DIR/config.sh"
 
 case "$1" in
   init)
@@ -24,15 +25,19 @@ case "$1" in
     bash "$SCRIPTS_DIR/installs.sh"
     bash "$SCRIPTS_DIR/symlinks.sh"
     bash "$SCRIPTS_DIR/repos.sh" init
+    echo "✅ Done!"
     ;;
   update)
     echo "🔄 Updating dotfiles..."
+    bash "$SCRIPTS_DIR/installs.sh" update
     bash "$SCRIPTS_DIR/repos.sh" update
+    echo "✅ Done!"
+    ;;
+  doctor)
+    bash "$SCRIPTS_DIR/doctor.sh"
     ;;
   *)
     echo "Unknown command: $1"
     exit 1
     ;;
 esac
-
-echo "✅Done!"
