@@ -35,7 +35,9 @@ SYMLINKS=(
 REPOS=(
   "tmux:plugins https://github.com/tmux-plugins/tpm tpm"
   "zsh:themes https://github.com/spaceship-prompt/spaceship-prompt.git spaceship-prompt | ln -sf \"$ZSH_HOME/config/themes/spaceship-prompt/spaceship.zsh\" \"$ZSH_HOME/config/themes/spaceship.zsh-theme\""
-  "zsh:plugins https://github.com/zsh-users/zsh-autosuggestions zsh-autosuggestions"
+  "zsh:plugins https://github.com/zsh-users/zsh-autosuggestions.git zsh-autosuggestions",
+  "zsh:plugins https://github.com/zsh-users/zsh-syntax-highlighting.git zsh-syntax-highlighting",
+  "zsh:plugins https://github.com/fdellwing/zsh-bat.git zsh-bat"
 )
 
 # Export array definitions for subshells

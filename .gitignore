@@ -1,5 +1,7 @@
-# Ignore cloned plugins/themes (managed by repos.sh)
+# tmux
 config/tmux/plugins/**
+
+# zsh
 config/zsh/config/plugins/**
 config/zsh/config/themes/**
 config/zsh/config/*.hidden.zsh
